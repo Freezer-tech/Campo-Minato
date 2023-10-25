@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Campo Minato - Got Edition</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="game-container">
+    <div class="game-panel">
+      <h1>Campo Minato</h1>
+
+      <div class="score">
+        <span class="score-label">SCORE</span>
+        <span class="score-counter">00000</span>
+      </div>
+    </div>
+
+    <div class="game-board">
+      <div class="grid"></div>
+      <div class="end-game-screen hidden">
+        <h2 class="end-game-text">Winter<br>has come</h2>
+        <div class="buttons-container">
+          <button class="show-board">Show board</button>
+          <button class="play-again" id="play-again-show">Play again</button>
+        </div>
+      </div>
+      <div class="end-game-screen-nostyle hidden">
+        <div class="buttons-container">
+          <button class="play-again-board">Play again</button>
+        </div>
+      </div>
+    </div>
+    <div id="audio-container">
+      <audio id="audio" src="./audio/got.mp3" loop controls></audio>
+    </div>
+  </div>
+<script type="text/Javascript" src="script.js"></script>
+</body>
+
+</html>

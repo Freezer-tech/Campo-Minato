@@ -1,0 +1,297 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'GameOfThronesFont'; 
+    src: url('fonts/g-o-t.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	padding: 16px;
+	line-height: 1;
+	color: rgb(255, 255, 255);
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);;
+	background-color: rgb(216, 238, 232);
+    font-family: 'GameOfThronesFont', Arial, sans-serif;
+	background-image: url('images/got.webp');
+	background-repeat: no-repeat;
+	background-position: cover;
+	background-size: cover;
+}
+
+.game-container {
+	width: 100%;
+	max-width: 600px;
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+.score {
+	margin-top: auto;
+	padding: 10px;
+	font-size: 28px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.score-label{
+	margin-top: auto;
+	font-size:20px;
+}
+
+.game-board {
+	position: relative;
+	border: 2px solid rgb(0, 23, 50);
+	box-shadow: 10px 10px 10px rgb(216, 216, 220);
+	-webkit-box-shadow: 0px 0px 52px 15px rgba(212,218,194,1);
+	-moz-box-shadow: 0px 0px 52px 15px rgba(212,218,194,1);
+	box-shadow: 0px 0px 52px 15px rgba(212,218,194,1);
+	display: flex;
+	flex-direction: column; 
+}
+
+.grid {
+	height: 480px;
+	width: 480px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+#audio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px; 
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#audio {
+	width: 100%; 
+	max-width: 400px; 
+}
+  
+.controls {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px; 
+}
+  
+.controls button {
+	margin: 0 10px; 
+	background-color: #f1754e; 
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+  
+  .controls button:hover {
+	background-color: #ff7733;
+}
+
+.cell {
+	width: 48px;
+	height: 48px;
+	cursor: pointer;
+}
+
+.cell-dark {
+	background-color: rgb(203, 224, 221,0.5);
+}
+
+.cell:hover,
+.cell-clicked {
+	background-color: rgb(157, 197, 199);
+	background-image: url('images/spada.png');
+	background-size: contain;
+}
+
+.cell-treasure {
+   	background-color: rgb(241, 117, 78, 0.0);
+	background-image: url('images/win2.png');
+	background-size: contain;
+}
+
+
+.cell-bomb {
+	background-color: rgba(170, 134, 123, 0);
+	background-image: url('images/bomb2.png');
+	background-size: contain;
+}
+
+.cell-clicked,
+.cell-bomb {
+	cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .game-panel {
+        font-size: 18px;
+    }
+}
+
+.end-game-screen {
+	background-color: #9555412e;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	color: rgb(0, 0, 0);
+	background-image: url('images/ending.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.end-game-text {
+	height:100;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	text-transform: uppercase;
+	font-size: 40px;
+	line-height: 1.2;
+	font-family: 'GameOfThronesFont', sans-serif;
+	margin-top: 45px;
+}
+
+.end-game-screen-nostyle { 
+	background-color: #9555412e;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	color: rgb(0, 0, 0);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+button {
+	padding: 15px 25px;
+	border: unset;
+	border-radius: 15px;
+	color: #212121;
+	z-index: 1;
+	background: #e8e8e8;
+	position: sticky;
+	font-weight: 1000;
+	font-size: 17px;
+	font-family: 'GameOfThronesFont', sans-serif;
+	-webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+	box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+	transition: all 250ms;
+	overflow: hidden;
+}
+   
+button::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	border-radius: 15px;
+	background-color:  rgb(255, 0, 0);
+	z-index: -1;
+	-webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+	box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+	transition: all 250ms
+}
+   
+button:hover {
+	color: #e8e8e8;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.8); 
+}
+   
+button:hover::before {
+	width: 100%;
+}
+
+.buttons-container {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px; 
+  }
+
+.buttons-container button {
+    margin: 10px;
+}
+
+.win {
+    color: rgb(255, 0, 0);
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+	text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.0); 
+    background-image: url('images/most2.png');
+    position: absolute;
+    top: 0;
+    left:0; 
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.win-buttons {
+    margin-top: 20px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.show {
+    position: absolute;
+    bottom: 24px;
+    left: 134px;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hidden {
+	display: none;
+}

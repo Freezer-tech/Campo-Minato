@@ -16,5 +16,5 @@ Nothing, clone the repository and start the index.html file
 Click on the grid trying to avoid all the bombs
 
 ## Contributing
-Contributions are welcome! Feel free to submit a pull request.
-Thank to [elijahit](https://github.com/elijahit)] for helping me fixing a little error
+- Contributions are welcome! Feel free to submit a pull request.
+- Thank to [elijahit](https://github.com/elijahit) for helping me fixing a little error
